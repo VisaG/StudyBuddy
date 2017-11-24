@@ -1,4 +1,4 @@
-# StudyBuddy-
+# StudyBuddy
 Desktop and Mobile application for collaborative group study.
 Desktop application is Java project based on principles of Object Oriented Design.
 The project is based on Model View Controller Pattern.
