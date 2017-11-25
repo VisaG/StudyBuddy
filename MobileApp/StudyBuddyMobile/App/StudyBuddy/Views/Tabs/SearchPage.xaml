@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="StudyBuddy.Views.SearchPage" Icon="search.png" Title="Search">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0, 10, 0" />
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<StackLayout>
+			<SearchBar x:Name="searchBar" Placeholder="Search text" TextChanged="OnSearchBarTextChanged" SearchButtonPressed="OnSearchBarButtonPressed" />
+			<StackLayout Orientation="Horizontal">
+				<Label Text="Based on your availabity" Style="{StaticResource projectLabels}" />
+				<Switch x:Name="switchAvailToggle" Toggled="OnSwitchAvailToggled" HorizontalOptions="EndAndExpand" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal">
+				<Label Text="Based on your course" Style="{StaticResource projectLabels}" />
+				<Switch x:Name="switchCourseToggle" Toggled="OnSwitchCourseToggled" HorizontalOptions="EndAndExpand" />
+			</StackLayout>
+			<StackLayout x:Name="searchResult">
+			<BoxView Color="Silver" HeightRequest="20" HorizontalOptions="Fill">
+						</BoxView>
+				<Label Text=" Groups Found: " Style="{StaticResource projectLabels}"/>
+			</StackLayout>
+			<StackLayout x:Name="studentResult">
+			<BoxView Color="Silver" HeightRequest="20" HorizontalOptions="Fill">
+						</BoxView>
+				<Label Text="Students Found: " Style="{StaticResource projectLabels}"/>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style x:Key="projectLabels" TargetType="Label">
+				<Setter Property="TextColor" Value="Black" />
+				<Setter Property="VerticalOptions" Value="CenterAndExpand" />
+				<Setter Property="Font" Value="Small" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+</ContentPage>

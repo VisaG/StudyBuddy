@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="StudyBuddy.Views.HomePage" xmlns:design="clr-namespace:StudyBuddy;assembly=StudyBuddy" xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView" BindingContext="{x:Static design:ViewModelLocator.HomePageViewModel}" xmlns:local="clr-namespace:StudyBuddy" Icon="home.png" Title="Home" x:Name="HomePage">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0, 10, 0" />
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<ScrollView>
+			<!--************ Featured Groups ************-->
+			<StackLayout>
+				<cv:CarouselView x:Name="CarouselGroups" HeightRequest="200" ItemsSource="{Binding Path=BindingContext.Groups, Source={x:Reference HomePage}}">
+					<cv:CarouselView.ItemTemplate>
+						<DataTemplate>
+							<Grid Margin="-10, 0">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="*" />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<Image Grid.RowSpan="2" Aspect="AspectFill" Source="{Binding image}" />
+								<StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="12">
+									<Label TextColor="White" Text="{Binding Name}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+								</StackLayout>
+							</Grid>
+						</DataTemplate>
+					</cv:CarouselView.ItemTemplate>
+				</cv:CarouselView>
+				<!--						<Grid ColumnSpacing="5">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="200" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Image Grid.RowSpan="2" Aspect="AspectFill" Source="xamagon.png" />
+							<StackLayout Grid.Row="2" BackgroundColor="#80000000" Padding="12">
+								<Label TextColor="Black" Text="Xamarin Group" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+							</StackLayout>
+						</Grid>-->
+				<!--************ Recent Groups ************-->
+				<StackLayout Orientation="Horizontal" Padding="0,10,0,0">
+					<Label Text="Recent groups" HorizontalOptions="StartAndExpand" />
+					<Label Text="See all&gt;" TextColor="Gray" HorizontalOptions="End" />
+				</StackLayout>
+				<ScrollView HorizontalOptions="Fill" Orientation="Horizontal">
+					<StackLayout Orientation="Horizontal" Padding="0,10,0,20">
+						<Grid ColumnSpacing="20">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="48" />
+								<RowDefinition Height="auto" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="100" />
+								<ColumnDefinition Width="100" />
+								<ColumnDefinition Width="100" />
+								<ColumnDefinition Width="100" />
+							</Grid.ColumnDefinitions>
+							<Image x:Name="imgFeatured1" Source="http://blog.xamarin.com/wp-content/uploads/2015/03/RDXWoY7W_400x400.png" Grid.Row="0" Grid.Column="0">
+								<Image.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped" />
+								</Image.GestureRecognizers>
+							</Image>
+							<Label x:Name="lblFeatured1" HorizontalOptions="Center" VerticalOptions="Center" Text="" Grid.Row="1" Grid.Column="0" />
+							<Image x:Name="imgFeatured2" Source="http://blog.xamarin.com/wp-content/uploads/2015/03/RDXWoY7W_400x400.png" Grid.Row="0" Grid.Column="1">
+								<Image.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped" />
+								</Image.GestureRecognizers>
+							</Image>
+							<Label x:Name="lblFeatured2" Text="" Grid.Row="1" Grid.Column="1" />
+							<Image x:Name="imgFeatured3" Source="http://blog.xamarin.com/wp-content/uploads/2015/03/RDXWoY7W_400x400.png" Grid.Row="0" Grid.Column="2">
+								<Image.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped" />
+								</Image.GestureRecognizers>
+							</Image>
+							<Label x:Name="lblFeatured3" Text="" Grid.Row="1" Grid.Column="2" />
+							<Image x:Name="imgFeatured4" Source="http://blog.xamarin.com/wp-content/uploads/2015/03/RDXWoY7W_400x400.png" Grid.Row="0" Grid.Column="3">
+								<Image.GestureRecognizers>
+									<TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped" />
+								</Image.GestureRecognizers>
+							</Image>
+							<Label x:Name="lblFeatured4" Text="" Grid.Row="1" Grid.Column="3" />
+						</Grid>
+					</StackLayout>
+				</ScrollView>
+				<!--************ Requests ************-->
+				<BoxView Color="#FFD3E0" HeightRequest="2" WidthRequest="100" />
+				<StackLayout Orientation="Horizontal" Padding="0,10,0,0">
+					<Label Text="Requests" HorizontalOptions="StartAndExpand" />
+				</StackLayout>
+				
+				<StackLayout  IsVisible="{Binding isRamya}" Orientation="Vertical" Padding="0,10,0,0">
+						<Grid x:Name="visaRequests" ColumnSpacing="20" Padding="0,0,0,20">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*" />
+							<RowDefinition Height="20" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="100" />
+							<ColumnDefinition Width="100" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<Image Source="https://lh3.googleusercontent.com/-vgx-xzWnKdY/AAAAAAAAAAI/AAAAAAAAAAA/XNgjOCxYFpc/photo.jpg" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" />
+						<Label TextColor="#484848" Text="Visa requested to form group Xamarin" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" />
+						<Button BorderColor="#FF5A5F"  BackgroundColor="#FF5A5F" TextColor="#ffffff" Clicked="OnAcceptButtonClicked" Text="Accept" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="1" />
+						<Button BorderColor="#FF5A5F"  BackgroundColor="#FF5A5F" TextColor="#ffffff" Text="Deny" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="2" />
+					</Grid>
+				</StackLayout>
+
+
+
+
+
+				<StackLayout  IsVisible="{Binding isVisa}" Orientation="Vertical" Padding="0,10,0,0">
+				<Label Text="You have no requests at the moment"  />
+				</StackLayout>
+				<!--<local:CarouselIndicators IndicatorHeight="16" IndicatorWidth="16" UnselectedIndicator="unselected_circle.png" SelectedIndicator="selected_circle.png" Position="{Binding Position}" ItemsSource="{Binding Path=BindingContext.Groups, Source={x:Reference HomePage}}" />-->
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

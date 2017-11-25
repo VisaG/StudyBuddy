@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="StudyBuddy.Views.GroupDetailPage">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical">
+			<Image x:Name="GroupImg" WidthRequest="60" HorizontalOptions="Center" />
+			<Label x:Name="GroupName" FontSize="Large" HorizontalOptions="Center" />
+			<Label x:Name="Des" FontSize="Micro" HorizontalOptions="Center" />
+			<Label x:Name="Memebers" FontSize="Large" HorizontalOptions="Center" />
+			<StackLayout x:Name="st" Orientation="Vertical">
+			</StackLayout>
+			<StackLayout Spacing="5" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
+				<Button x:Name="Edit" Text="Edit" TextColor="White" BorderColor="Black" HorizontalOptions="Center" BackgroundColor="Black" Clicked="OnEditButtonClicked" IsVisible="True" />
+				<Button x:Name="Leavegroup" Text="Leave group" TextColor="White" BorderColor="Black" HorizontalOptions="Center" BackgroundColor="Black" IsVisible="True" />
+			</StackLayout>
+			<StackLayout Spacing="5" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
+				<Button x:Name="Save" Text="Save" TextColor="White" BorderColor="Black" HorizontalOptions="Center" BackgroundColor="Black" Clicked="OnSaveButtonClicked" IsVisible="False" />
+				<Button x:Name="Cancel" Text="Cancel" TextColor="White" BorderColor="Black" HorizontalOptions="Center" BackgroundColor="Black" IsVisible="False" Clicked="OnCancelButtonClicked" />
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

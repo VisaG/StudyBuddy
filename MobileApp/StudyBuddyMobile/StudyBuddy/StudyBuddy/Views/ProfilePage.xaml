@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="StudyBuddy.Views.ProfilePage" Icon="contact.png" Title="Profile">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="5,40,10,5" Android="5,30,10,5" />
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<ScrollView>
+			<StackLayout HorizontalOptions="CenterAndExpand">
+				<StackLayout x:Name="studentDetail" HorizontalOptions="StartAndExpand">
+					<StackLayout Orientation="Horizontal">
+						<Image x:Name="profilePic" WidthRequest="100" />
+						<StackLayout Spacing="1">
+							<Label x:Name="StudentName" Style="{StaticResource projectLabels}" />
+							<Label x:Name="studyLevel" Style="{StaticResource projectLabels}" />
+						</StackLayout>
+					</StackLayout>
+					<StackLayout>
+						<BoxView Color="Silver" HeightRequest="10" HorizontalOptions="Fill">
+						</BoxView>
+					</StackLayout>
+					<StackLayout x:Name="interestCourseStack">
+						<Label Text="My Interest" Style="{StaticResource projectLabels}" />
+					</StackLayout>
+					<StackLayout>
+						<Label Text="My Availabity" Style="{StaticResource projectLabels}" />
+						<StackLayout Orientation="Horizontal">
+							<Label Text="Day: " Style="{StaticResource projectLabels}" />
+							<Picker x:Name="day" Title="DAY" SelectedIndexChanged="onDaySelected">
+								<Picker.Items>
+									<x:String>Mon</x:String>
+									<x:String>Tue</x:String>
+									<x:String>Wed</x:String>
+									<x:String>Thurs</x:String>
+									<x:String>Fri</x:String>
+									<x:String>Sat</x:String>
+									<x:String>Sun</x:String>
+								</Picker.Items>
+							</Picker>
+						</StackLayout>
+						<StackLayout Orientation="Horizontal">
+							<Label Text="From: " Style="{StaticResource projectLabels}" />
+							<TimePicker x:Name="timeFromPicker" PropertyChanged="OnTimeFromPickerPropertyChanged" />
+							<Label Text="To: " Style="{StaticResource projectLabels}" />
+							<TimePicker x:Name="timeToPicker" PropertyChanged="OnTimeToPickerPropertyChanged" />
+						</StackLayout>
+						<StackLayout>
+							<BoxView Color="Silver" HeightRequest="10" HorizontalOptions="Fill">
+							</BoxView>
+						</StackLayout>
+						<StackLayout Orientation="Horizontal" VerticalOptions="End">
+							<Button x:Name="save" Text="Save" BorderColor="Black" BorderWidth="1" WidthRequest="100" IsVisible="false" HorizontalOptions="Center" Clicked="onSaveButtonClicked" />
+							<Button x:Name="edit" Text="Edit" BorderColor="Black" BorderWidth="1" WidthRequest="100" IsVisible="true" HorizontalOptions="Center" Clicked="onEditButtonClicked" />
+							<Button x:Name="cancel" Text="Cancel" BorderColor="Black" BorderWidth="1" WidthRequest="100" IsVisible="False" HorizontalOptions="Center" Clicked="onCancelButtonClicked" />
+						</StackLayout>
+					</StackLayout>
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style x:Key="projectLabels" TargetType="Label">
+				<Setter Property="TextColor" Value="Black" />
+				<Setter Property="VerticalOptions" Value="CenterAndExpand" />
+				<Setter Property="Font" Value="Small" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+</ContentPage>

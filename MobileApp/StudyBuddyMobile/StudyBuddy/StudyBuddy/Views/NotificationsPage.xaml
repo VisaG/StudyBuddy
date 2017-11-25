@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="StudyBuddy.Views.NotificationsPage" Icon="notifications.png" Title="Notifications">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0, 10, 0" />
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<StackLayout>
+			<Label Text="Notifications" HorizontalOptions="StartAndExpand" />
+			<StackLayout x:Name="notificaitonStack" ></StackLayout>
+			<Button  Text="Refresh" BorderColor="#FF5A5F"  BackgroundColor="#FF5A5F" TextColor="#ffffff" BorderWidth="1" VerticalOptions="EndAndExpand" Clicked="OnSubmitButtonClicked" />
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

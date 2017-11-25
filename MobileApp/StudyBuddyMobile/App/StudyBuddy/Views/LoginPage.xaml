@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:StudyBuddy" x:Class="StudyBuddy.Views.LoginPage">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="30, 40, 30, 60" Android="30, 40, 30, 60" />
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" Spacing="0">
+			<Image Source="logo.png" WidthRequest="75" />
+			<StackLayout>
+			<Label Text="StudyBuddy" FontSize="20" FontAttributes="Bold" TextColor="Navy" HorizontalOptions="Center" />
+			<Entry Text="{Binding User}" Placeholder="SCUID@scu.edu" Keyboard="Email" VerticalOptions="CenterAndExpand">
+
+			</Entry>
+			<Entry  Text="{Binding Pass}" IsPassword="true" VerticalOptions="CenterAndExpand" />
+			<Button Text="Submit" BorderColor="Black" BorderWidth="1" VerticalOptions="CenterAndExpand"  Command="{Binding NavigationCommand}"/>
+			<Image Source="logoNew.jpg" WidthRequest="200" />
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

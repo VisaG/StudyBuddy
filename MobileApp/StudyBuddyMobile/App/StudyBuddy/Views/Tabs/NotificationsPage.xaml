@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="StudyBuddy.Views.NotificationsPage" Icon="notifications.png" Title="Notifications">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0, 10, 0" />
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<StackLayout>
+			<Label Text="Requests" HorizontalOptions="StartAndExpand" />
+			<Label FontSize="11" Text="You sent a request to join group Database" />
+			<BoxView Color="#FFD3E0" HeightRequest="2" WidthRequest="100" />
+			<Label FontSize="11" Text="You sent a request to form group C# with John" />
+			<BoxView Color="#FFD3E0" HeightRequest="2" WidthRequest="100" />
+			<Label FontSize="11" Text="Jason has accepted your request to join group Java" />
+			<BoxView Color="#FFD3E0" HeightRequest="2" WidthRequest="100" />
+			<Label FontSize="11" Text="Jessica: Sorry cannot join group Linux" />
+			<BoxView Color="#FFD3E0" HeightRequest="2" WidthRequest="100" />
+			<Label FontSize="11" Text="Congratualtion you have joined group Adobe" />
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
